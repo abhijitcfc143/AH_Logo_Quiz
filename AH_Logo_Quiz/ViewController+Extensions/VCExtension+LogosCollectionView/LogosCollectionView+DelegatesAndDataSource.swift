@@ -31,8 +31,10 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource,UIC
         if (collectionView == self.logosCollectionView){
             return self.logosArray?.count ?? 0
         }else if (collectionView == self.randomLettersCollectionView){
+            // need to set count of each name here
             return 5
         }else if (collectionView == self.wordGuessCollectionView){
+            // need to set count of each name here
             return 5
         }
         return 0
