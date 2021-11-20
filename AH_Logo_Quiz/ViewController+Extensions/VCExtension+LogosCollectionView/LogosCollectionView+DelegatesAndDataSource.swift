@@ -63,7 +63,9 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource,UIC
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (collectionView == self.randomLettersCollectionView){
-            
+            // on click of letter should be populate in wordGuessCollectionView
+        }else if (collectionView == self.wordGuessCollectionView){
+            // on click of letter should be removed from wordGuessCollectionView
         }
     }
 }
