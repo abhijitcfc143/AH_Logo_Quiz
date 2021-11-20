@@ -42,9 +42,9 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource,UIC
         if (collectionView == self.logosCollectionView){
             return self.showLogoCollectionViewCell(indexPath: indexPath)
         }else if (collectionView == self.randomLettersCollectionView){
-            return self.showMovieCollectionViewCell(indexPath: indexPath)
+            return self.showLetterCollectionViewCell(collectionView: collectionView, indexPath: indexPath)
         }else if (collectionView == self.wordGuessCollectionView){
-            return self.showMovieCollectionViewCell(indexPath: indexPath)
+            return self.showLetterCollectionViewCell(collectionView: collectionView, indexPath: indexPath)
         }
         return UICollectionViewCell()
         
@@ -57,5 +57,11 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource,UIC
         let widthPerItem = availableWidth / itemsPerRow
         
         return CGSize(width: widthPerItem, height: self.logosCollectionView.frame.height/2.5)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if (collectionView == self.randomLettersCollectionView){
+            
+        }
     }
 }

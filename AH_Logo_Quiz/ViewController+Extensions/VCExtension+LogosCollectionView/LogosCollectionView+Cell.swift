@@ -26,15 +26,19 @@ extension ViewController{
     
     func showLetterCollectionViewCell(collectionView: UICollectionView,indexPath : IndexPath) -> LettersCollectionViewCell {
         
-        let cell = logosCollectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellIds.lettersCollectionViewCell, for: indexPath) as! LettersCollectionViewCell
-        if (collectionView == self.randomLettersCollectionView){
-            var char = self.logosArray?[indexPath.row].name.randomElement()
-            cell.letterLabel.text = String(char)
-        }else if (collectionView == self.wordGuessCollectionView){
-            cell.letterLabel.text = ""
-        }
-        cell.layer.cornerRadius = 8.0
         
-        return cell
+        if (collectionView == self.randomLettersCollectionView){
+            let cell = randomLettersCollectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellIds.lettersCollectionViewCell, for: indexPath) as! LettersCollectionViewCell
+            var char = self.logosArray?[indexPath.row].name
+            cell.letterLabel.text = char
+            cell.layer.cornerRadius = 8.0
+            return cell
+        }else if (collectionView == self.wordGuessCollectionView){
+            let cell = wordGuessCollectionView.dequeueReusableCell(withReuseIdentifier: CollectionViewCellIds.lettersCollectionViewCell, for: indexPath) as! LettersCollectionViewCell
+            cell.letterLabel.text = "To-Do:- on click of randomCollectionview letters it should be populate here"
+            cell.layer.cornerRadius = 8.0
+            return cell
+        }
+        return LettersCollectionViewCell()
     }
 }
